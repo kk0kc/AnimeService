@@ -139,7 +139,6 @@
         </plugins>
     </build>
     <scm>
-<!--        <developerConnection>scm:git:git@github.com:sushildangi/online-shopping.git</developerConnection>-->
         <tag>HEAD</tag>
     </scm>
 </project>
