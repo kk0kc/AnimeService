@@ -30,11 +30,11 @@ public class WebFlowConfig extends AbstractFlowConfiguration {
     @Bean
     public FlowDefinitionRegistry flowRegistry() {
         return getFlowDefinitionRegistryBuilder(flowBuilderServices())
-//                .setBasePath("/WEB-INF/views/flows")
+               .setBasePath("/WEB-INF/views/flows")
 //
-                .addFlowLocationPattern("/src/main/webapp/WEB-INF/views/flows/register/signup-flow.xml").build();
+//                 .addFlowLocationPattern("/src/main/webapp/WEB-INF/views/flows/register/signup-flow.xml").build();
 
-//                .addFlowLocationPattern("/**/signup-flow.xml").build();
+               .addFlowLocationPattern("/**/signup-flow.xml").build();
     }
 
     @Bean
