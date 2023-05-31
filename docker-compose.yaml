@@ -5,7 +5,7 @@ services:
     container_name: springapp
     environment:
       JS_URL: http://localhost
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/springapp
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/springapp
 #    ports:
 #      - ${PORT}:${PORT}
     depends_on:
@@ -14,9 +14,9 @@ services:
     image: postgres
     container_name: db
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=zmalqp.13
-      - POSTGRES_DB=springapp
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=zmalqp.13
+#      - POSTGRES_DB=springapp
       - PGDATA=/var/lib/postgresql/data/pgdata
 #    ports:
 #      - 5432:5432
