@@ -1,13 +1,13 @@
-#version: "4.20.0"
-#services:
-#  springapp:
-#    build: .
-#    container_name: springapp
-#    environment:
-#      JS_URL: http://localhost
-##      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/springapp
-##    ports:
-##      - ${PORT}:${PORT}
+version: "4.20.0"
+services:
+  springapp:
+    build: .
+    container_name: springapp
+    environment:
+      JS_URL: http://localhost
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/springapp
+    ports:
+      - ${PORT}:${PORT}
 #    depends_on:
 #      - db
 #  db:
