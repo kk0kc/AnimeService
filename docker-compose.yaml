@@ -1,11 +1,11 @@
-version: "4.19.0"
+version: "4.20.0"
 services:
   springapp:
     build: .
     container_name: springapp
     environment:
       JS_URL: http://localhost
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/springapp
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5050/springapp
     ports:
       - ${PORT}:${PORT}
     depends_on:
@@ -19,7 +19,7 @@ services:
       - POSTGRES_DB=springapp
       - PGDATA=/var/lib/postgresql/data/pgdata
     ports:
-      - 5432:5432
+      - 5050:5050
     volumes:
       - pgdata:/var/lib/postgresql/data
 volumes:
