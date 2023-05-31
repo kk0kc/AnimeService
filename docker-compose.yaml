@@ -1,0 +1,34 @@
+version: "4.20.0"
+services:
+  springapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: springapp
+    environment:
+      JS_URL: http://localhost
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/springapp
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  db:
+    image: postgres
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=zmalqp.13
+      - POSTGRES_DB=springapp
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
+#    - /var/run/docker.sock:/var/run/docker.sock
